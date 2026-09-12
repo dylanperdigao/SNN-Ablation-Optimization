@@ -1,19 +1,38 @@
-# Spiking Neural Network Optimization Strategies for Bank Account Fraud Detection
+# Ablation-Driven Optimization of Spiking Neural Networks for Bank Account Fraud Detection
+
+Source code of the paper entitled "Ablation-Driven Optimization of Spiking Neural Networks for Bank Account Fraud Detection" accepted at "IDEAL 2026", the 27th International Conference on Intelligent Data Engineering and Automated Learning.
 
 ## Abstract
-Spiking Neural Networks (SNNs) have emerged as the next paradigm in Artificial Intelligence, gaining significant popularity due to their high energy eﬃciency when deployed on neuromorphic hardware. However, deploying these networks in real-world scenarios poses optimization challenges, particularly in highly imbalanced datasets, due to the high-dimensional parameter spaces of SNNs. This paper proposes three ablation studies of optimization strategies for SNNs. It provides insights into their parameterization in classification tasks, including the optimization of the membrane decay and firing threshold of the neuron, the number of timesteps for neuronal dynamics simulation, and the surrogate gradient slope required for backpropagation. Our results showed that using a parameter initialization strategy that fixes the parameters while learning only the threshold, with fewer timesteps and a smaller surrogate gradient slope, generally performs better. Furthermore, we use the obtained results to benchmark these optimized SNNs against traditional Machine Learning algorithms, demonstrating a recall of up to 52.45% for online Bank Account Fraud detection.
+Spiking neural networks (SNNs) have emerged as the next paradigm in artificial intelligence (AI), offering potential energy efficiency for real-world deployments. However, training these networks on highly imbalanced datasets remains challenging due to their high-dimensional parameter spaces. This paper presents three ablation studies on optimization strategies for SNNs in classification tasks, analyzing membrane decay, firing thresholds, temporal window size, and surrogate gradient slopes. Our results indicate that using fixed parameter initialization while learning only the threshold, combined with smaller temporal windows and architecture-specific surrogate gradient slopes, yields the most stable performance. We evaluate these optimized SNNs on the Bank Account Fraud suite against traditional machine learning algorithms. While boosting ensembles maintain strong performance for this classification task, our optimized SNNs demonstrate competitive performance measured by recall under a 5% false positive rate, while achieving higher fairness in terms of predictive equality of sensitive attributes.
 
 **Keywords:** Spiking Neural Networks $\cdot$ Neuromorphic Computing $\cdot$ Neuronal Dynamics $\cdot$ Bayesian Optimization $\cdot$ Responsible AI.
 
-![Image](./src/plots/exp_a_lineplot.pdf)
-![Image](./src/plots/exp_a_violin.pdf)
+## Installation
 
-![Image](./src/plots/exp_b_lineplot.pdf)
-![Image](./src/plots/exp_b_violin.pdf)
+To install the required packages, run the following command:
+```sh
+pip install -r requirements.txt
+```
+Download the six Variant of the Bank Account Fraud (BAF) Dataset and extract the parquet files to the data folder.
 
-![Image](./src/plots/exp_c_lineplot.pdf)
-![Image](./src/plots/exp_c_violin.pdf)
+## Dataset
 
-![Image](./src/plots/exp_d1_boxplot_recall.pdf)
-![Image](./src/plots/exp_d1_boxplot_fairness.pdf)
-![Image](./src/plots/exp_d2_radarplot.pdf)
+The Bank Account Fraud (BAF) dataset is a synthetic dataset based on real-world data that simulates bank account opening applications. The dataset contains 6 parquet files, each representing a different variant of the dataset (Base, Variant I, Variant II, Variant III, Variant IV, and Variant V). It contains 30 features and a binary target variable indicating whether the application is fraudulent or not.
+
+## Repository Structure
+
+The repository is structured as follows:
+
+- `data`: Contains the Bank Account Fraud dataset.
+- `src`: Contains the source code of the project.
+
+
+## Bibtex
+
+To cite this work, use the following bibtex entry:
+```bibtex
+TBD
+```
+## Issues
+
+This code is imported and adapted from the original research repository. Consequently, the code may contain bugs or issues. If you encounter any issues while running the code, please open an issue in the repository.
