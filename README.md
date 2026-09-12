@@ -1,5 +1,7 @@
 # Ablation-Driven Optimization of Spiking Neural Networks for Bank Account Fraud Detection
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22036324.svg)](https://doi.org/10.5281/zenodo.22036324)
+
 Source code of the paper entitled "Ablation-Driven Optimization of Spiking Neural Networks for Bank Account Fraud Detection" accepted at "IDEAL 2026", the 27th International Conference on Intelligent Data Engineering and Automated Learning.
 
 ## Abstract
